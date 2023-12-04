@@ -18,43 +18,44 @@ public class NewAccountPage extends BasePage {
         driver.get(BASE_URL + "lightning/o/Account/new");
     }
 
-    public void createNewAccount(String AccountName, String Phone, String Fax, String AccountNumber,
-                                 String Website, String AccountSite, String TickerSymbol, String Type,
-                                 String Ownership, String Industry, String Employees, String AnnualRevenue,
-                                 String SICCode, String BillingStreet, String BillingCity, String BillingState,
-                                 String BillingZip, String BillingCountry, String ShippingStreet,
-                                 String ShippingCity, String ShippingState, String ShippingZip, String ShippingCountry,
-                                 String CustomerPriority, String SLA, String SLASerialNumber, String NumberOfLocations,
-                                 String UpsellOpportunity, String Description) {
-        new Input(driver, "Account Name").write(AccountName + Math.random());
-        new Input(driver, "Phone").write(Phone);
-        new Input(driver, "Fax").write(Fax);
-        new Input(driver, "Account Number").write(AccountNumber);
-        new Input(driver, "Website").write(Website);
-        new Input(driver, "Account Site").write(AccountSite);
-        new Input(driver, "Ticker Symbol").write(TickerSymbol);
-        new PickList(driver, "Type").select(Type);
-        new PickList(driver, "Ownership").select(Ownership);
-        new PickList(driver, "Industry").select(Industry);
-        new Input(driver, "Employees").write(Employees);
-        new Input(driver, "Annual Revenue").write(AnnualRevenue);
-        new Input(driver, "SIC Code").write(SICCode);
-        new TextArea(driver, "Billing Street").write(BillingStreet);
-        new Input(driver, "Billing City").write(BillingCity);
-        new Input(driver, "Billing State/Province").write(BillingState);
-        new Input(driver, "Billing Zip/Postal Code").write(BillingZip);
-        new Input(driver, "Billing Country").write(BillingCountry);
-        new TextArea(driver, "Shipping Street").write(ShippingStreet);
-        new Input(driver, "Shipping City").write(ShippingCity);
-        new Input(driver, "Shipping State/Province").write(ShippingState);
-        new Input(driver, "Shipping Zip/Postal Code").write(ShippingZip);
-        new Input(driver, "Shipping Country").write(ShippingCountry);
-        new PickList(driver, "Customer Priority").select(CustomerPriority);
-        new PickList(driver, "SLA").select(SLA);
-        new Input(driver, "SLA Serial Number").write(SLASerialNumber);
-        new Input(driver, "Number of Locations").write(NumberOfLocations);
-        new PickList(driver, "Upsell Opportunity").select(UpsellOpportunity);
-        new TextArea(driver, "Description").write(Description);
+    public void createNewAccount(String rating, String accountName, String phone, String fax, String accountNumber,
+                                 String website, String accountSite, String tickerSymbol, String type,
+                                 String ownership, String industry, String employees, String annualRevenue,
+                                 String sicCode, String billingStreet, String billingCity, String billingState,
+                                 String billingZip, String billingCountry, String shippingStreet,
+                                 String shippingCity, String shippingState, String shippingZip, String shippingCountry,
+                                 String customerPriority, String sla, String slaSerialNumber, String numberOfLocations,
+                                 String upsellOpportunity, String description) {
+        new PickList(driver, "Rating").select(rating);
+        new Input(driver, "Account Name").write(accountName + Math.random());
+        new Input(driver, "Phone").write(phone);
+        new Input(driver, "Fax").write(fax);
+        new Input(driver, "Account Number").write(accountNumber);
+        new Input(driver, "Website").write(website);
+        new Input(driver, "Account Site").write(accountSite);
+        new Input(driver, "Ticker Symbol").write(tickerSymbol);
+        new PickList(driver, "Type").select(type);
+        new PickList(driver, "Ownership").select(ownership);
+        new PickList(driver, "Industry").select(industry);
+        new Input(driver, "Employees").write(employees);
+        new Input(driver, "Annual Revenue").write(annualRevenue);
+        new Input(driver, "SIC Code").write(sicCode);
+        new TextArea(driver, "Billing Street").write(billingStreet);
+        new Input(driver, "Billing City").write(billingCity);
+        new Input(driver, "Billing State/Province").write(billingState);
+        new Input(driver, "Billing Zip/Postal Code").write(billingZip);
+        new Input(driver, "Billing Country").write(billingCountry);
+        new TextArea(driver, "Shipping Street").write(shippingStreet);
+        new Input(driver, "Shipping City").write(shippingCity);
+        new Input(driver, "Shipping State/Province").write(shippingState);
+        new Input(driver, "Shipping Zip/Postal Code").write(shippingZip);
+        new Input(driver, "Shipping Country").write(shippingCountry);
+        new PickList(driver, "Customer Priority").select(customerPriority);
+        new PickList(driver, "SLA").select(sla);
+        new Input(driver, "SLA Serial Number").write(slaSerialNumber);
+        new Input(driver, "Number of Locations").write(numberOfLocations);
+        new PickList(driver, "Upsell Opportunity").select(upsellOpportunity);
+        new TextArea(driver, "Description").write(description);
         driver.findElement(ACCOUNT_SAVE_BUTTON).click();
     }
 }

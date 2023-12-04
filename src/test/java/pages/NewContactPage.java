@@ -18,40 +18,40 @@ public class NewContactPage extends BasePage {
         driver.get(BASE_URL + "lightning/o/Contact/new");
     }
 
-    public void createNewContact(String Phone, String HomePhone, String Salutation, String FirstName, String LastName,
-                                 String Mobile, String Title, String OtherPhone, String Department, String Fax,
-                                 String Email, String Assistant, String LeadSource, String AsstPhone,
-                                 String MailingStreet, String MailingCity, String MailingState, String MailingZip,
-                                 String MailingCountry, String OtherStreet, String OtherCity, String OtherState,
-                                 String OtherZip, String OtherCountry, String Languages, String Level,
-                                 String Description) {
-        new Input(driver, "Phone").write(Phone);
-        new Input(driver, "Home Phone").write(HomePhone);
-        new PickList(driver, "Salutation").select(Salutation);
-        new Input(driver, "First Name").write(FirstName);
-        new Input(driver, "Last Name").write(LastName);
-        new Input(driver, "Mobile").write(Mobile);
-        new Input(driver, "Title").write(Title);
-        new Input(driver, "Other Phone").write(OtherPhone);
-        new Input(driver, "Department").write(Department);
-        new Input(driver, "Fax").write(Fax);
-        new Input(driver, "Email").write(Email);
-        new Input(driver, "Assistant").write(Assistant);
-        new PickList(driver, "Lead Source").select(LeadSource);
-        new Input(driver, "Asst. Phone").write(AsstPhone);
-        new TextArea(driver, "Mailing Street").write(MailingStreet);
-        new Input(driver, "Mailing City").write(MailingCity);
-        new Input(driver, "Mailing State/Province").write(MailingState);
-        new Input(driver, "Mailing Zip/Postal Code").write(MailingZip);
-        new Input(driver, "Mailing Country").write(MailingCountry);
-        new TextArea(driver, "Other Street").write(OtherStreet);
-        new Input(driver, "Other City").write(OtherCity);
-        new Input(driver, "Other State/Province").write(OtherState);
-        new Input(driver, "Other Zip/Postal Code").write(OtherZip);
-        new Input(driver, "Other Country").write(OtherCountry);
-        new Input(driver, "Languages").write(Languages);
-        new PickList(driver, "Level").select(Level);
-        new TextArea(driver, "Description").write(Description);
+    public void createNewContact(String phone, String homePhone, String salutation, String firstName, String lastName,
+                                 String mobile, String title, String otherPhone, String department, String fax,
+                                 String email, String assistant, String leadSource, String asstPhone,
+                                 String mailingStreet, String mailingCity, String mailingState, String mailingZip,
+                                 String mailingCountry, String otherStreet, String otherCity, String otherState,
+                                 String otherZip, String otherCountry, String languages, String level,
+                                 String description) {
+        new Input(driver, "Phone").write(phone);
+        new Input(driver, "Home Phone").write(homePhone);
+        new PickList(driver, "Salutation").select(salutation);
+        new Input(driver, "First Name").write(firstName);
+        new Input(driver, "Last Name").write(lastName);
+        new Input(driver, "Mobile").write(mobile);
+        new Input(driver, "Title").write(title);
+        new Input(driver, "Other Phone").write(otherPhone);
+        new Input(driver, "Department").write(department);
+        new Input(driver, "Fax").write(fax);
+        new Input(driver, "Email").write(email);
+        new Input(driver, "Assistant").write(assistant);
+        new PickList(driver, "Lead Source").select(leadSource);
+        new Input(driver, "Asst. Phone").write(asstPhone);
+        new TextArea(driver, "Mailing Street").write(mailingStreet);
+        new Input(driver, "Mailing City").write(mailingCity);
+        new Input(driver, "Mailing State/Province").write(mailingState);
+        new Input(driver, "Mailing Zip/Postal Code").write(mailingZip);
+        new Input(driver, "Mailing Country").write(mailingCountry);
+        new TextArea(driver, "Other Street").write(otherStreet);
+        new Input(driver, "Other City").write(otherCity);
+        new Input(driver, "Other State/Province").write(otherState);
+        new Input(driver, "Other Zip/Postal Code").write(otherZip);
+        new Input(driver, "Other Country").write(otherCountry);
+        new Input(driver, "Languages").write(languages);
+        new PickList(driver, "Level").select(level);
+        new TextArea(driver, "Description").write(description);
         driver.findElement(CONTACT_SAVE_BUTTON).click();
     }
 }
