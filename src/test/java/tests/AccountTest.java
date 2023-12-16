@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class AccountTest extends BaseTest {
 
-    @Test
+    @Test(description = "Account creation test.")
     public void createAccount() {
         //https://tms41-dev-ed.my.salesforce.com/
         //drak@tms.sandbox
@@ -12,12 +12,9 @@ public class AccountTest extends BaseTest {
 
         loginPage.open();
         loginPage.login("drak@tms.sandbox", "Password01!!");
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title=User]")));
-        //driver.get("https://tms41-dev-ed.lightning.force.com/lightning/o/Account/list?filterName=Recent");
-        //driver.findElement(By.cssSelector("[title=New]")).click();
+        homePage.isOpened();
         newAccountPage.open();
-        newAccountPage.createNewAccount("Warm", "TMS Dmitry Rak", "7-977-970-41-78","7-977-970-41-78",
+        newAccountPage.createNewAccount("Warm", "TMS Rak Dmitry", "7-977-970-41-78","7-977-970-41-78",
                 "123", "teachmeskills.by", "teachmeskills.by", "123",
                 "Prospect", "Public", "Banking", "1", "1", "123",
                 "Blabla Street 123", "Blabla City", "Blabla State", "123",

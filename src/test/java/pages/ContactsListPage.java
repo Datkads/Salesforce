@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ContactsListPage extends BasePage {
 
@@ -13,5 +14,9 @@ public class ContactsListPage extends BasePage {
 
     public void open() {
         driver.get(BASE_URL + "lightning/o/Contact/list");
+    }
+
+    public void isOpened() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(NEW_CONTACT_BUTTON));
     }
 }

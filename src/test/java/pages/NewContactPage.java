@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import wrappers.Input;
 import wrappers.PickList;
 import wrappers.TextArea;
@@ -16,6 +17,10 @@ public class NewContactPage extends BasePage {
 
     public void open() {
         driver.get(BASE_URL + "lightning/o/Contact/new");
+    }
+
+    public void isOpened() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(CONTACT_SAVE_BUTTON));
     }
 
     public void createNewContact(String phone, String homePhone, String salutation, String firstName, String lastName,

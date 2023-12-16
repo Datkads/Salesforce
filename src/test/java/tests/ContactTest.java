@@ -4,10 +4,11 @@ import org.testng.annotations.Test;
 
 public class ContactTest extends BaseTest {
 
-    @Test
+    @Test(description = "Contact creation test.")
     public void createContact() {
         loginPage.open();
         loginPage.login("drak@tms.sandbox", "Password01!!");
+        homePage.isOpened();
         newContactPage.open();
         newContactPage.createNewContact("7-977-970-41-78", "7-977-970-41-78", "Mr.",
                 "David", "Gelenidze", "7-977-970-41-78", "Sir", "123123",
