@@ -12,7 +12,7 @@ public class Input {
         this.label = label;
     }
     public void write(String text) {
-        driver.findElement(By.xpath(String.format("//*[text()='%s']/ancestor::lightning-input//input", label)))
+        driver.findElement(By.xpath(String.format("//*[text()=\"%s\"]/ancestor::lightning-input//input", label)))
                 .sendKeys(text);
     }
 }

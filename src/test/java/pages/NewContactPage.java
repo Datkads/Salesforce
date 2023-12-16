@@ -20,11 +20,11 @@ public class NewContactPage extends BasePage {
 
     public void createNewContact(String phone, String homePhone, String salutation, String firstName, String lastName,
                                  String mobile, String title, String otherPhone, String department, String fax,
-                                 String email, String assistant, String leadSource, String asstPhone,
-                                 String mailingStreet, String mailingCity, String mailingState, String mailingZip,
-                                 String mailingCountry, String otherStreet, String otherCity, String otherState,
-                                 String otherZip, String otherCountry, String languages, String level,
-                                 String description) {
+                                 String birthDate, String email, String assistant, String leadSource, String asstPhone,
+                                 String momsEmail, String mailingStreet, String mailingCity, String mailingState,
+                                 String mailingZip, String mailingCountry, String otherStreet, String otherCity,
+                                 String otherState, String otherZip, String otherCountry, String languages,
+                                 String level, String description) {
         new Input(driver, "Phone").write(phone);
         new Input(driver, "Home Phone").write(homePhone);
         new PickList(driver, "Salutation").select(salutation);
@@ -35,10 +35,12 @@ public class NewContactPage extends BasePage {
         new Input(driver, "Other Phone").write(otherPhone);
         new Input(driver, "Department").write(department);
         new Input(driver, "Fax").write(fax);
+        new Input(driver, "Birthdate").write(birthDate);
         new Input(driver, "Email").write(email);
         new Input(driver, "Assistant").write(assistant);
         new PickList(driver, "Lead Source").select(leadSource);
         new Input(driver, "Asst. Phone").write(asstPhone);
+        new Input(driver, "mom's email").write(momsEmail);
         new TextArea(driver, "Mailing Street").write(mailingStreet);
         new Input(driver, "Mailing City").write(mailingCity);
         new Input(driver, "Mailing State/Province").write(mailingState);
