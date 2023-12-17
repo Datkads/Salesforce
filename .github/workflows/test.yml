@@ -17,7 +17,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      USER: ${{secrets.SF_USER}}
+      PASSWORD: ${{secrets.SF_PASSWORD}}
+      BASE_PAGE: ${{secrets.SF_BASE_PAGE}}
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -26,5 +29,5 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn clean test
+    - name: Run Tests
+      run: mvn clean test -Duser=$USER -Dpassword=$PASSWORD -Dbase_page=$BASE_PAGE
