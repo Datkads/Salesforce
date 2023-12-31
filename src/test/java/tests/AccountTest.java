@@ -6,9 +6,6 @@ public class AccountTest extends BaseTest {
 
     @Test(description = "Account creation test.")
     public void createAccount() {
-        //https://tms41-dev-ed.my.salesforce.com/
-        //drak@tms.sandbox
-        //Password01!!
 
         loginPage.open();
         loginPage.login("drak@tms.sandbox", "Password01!!");

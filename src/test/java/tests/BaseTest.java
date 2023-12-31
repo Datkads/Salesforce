@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 import pages.*;
+import utils.PropertyReader;
 
 import java.time.Duration;
 
@@ -21,6 +22,8 @@ public class BaseTest {
     NewAccountPage newAccountPage;
     ContactsListPage contactsListPage;
     NewContactPage newContactPage;
+    String user;
+    String password;
 
     Account accountBuilder = Account.builder()
             .rating("Cold")
@@ -108,6 +111,11 @@ public class BaseTest {
         newAccountPage = new NewAccountPage(driver);
         contactsListPage = new ContactsListPage(driver);
         newContactPage = new NewContactPage(driver);
+
+        user = System.getProperty("user", PropertyReader.getProperty("sf.user"));
+        System.out.println(user);
+        password = System.getProperty("password", PropertyReader.getProperty("sf.password"));
+        System.out.println(password);
     }
 
     @AfterMethod(alwaysRun = true, description = "Browser shutdown")
