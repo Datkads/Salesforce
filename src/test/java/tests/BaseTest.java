@@ -5,7 +5,9 @@ import dto.Contact;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 import pages.*;
@@ -96,11 +98,15 @@ public class BaseTest {
         if(browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            driver.manage().window().maximize();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
+            driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
-            driver.manage().window().maximize();
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("headless");
+            driver = new EdgeDriver(options);
         }
         testContext.setAttribute("chrome", driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
